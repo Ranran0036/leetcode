@@ -1,31 +1,19 @@
 let maxArea = function(height) {
-    let rightFlag = true;
-    let leftFlag = true;
-    let right = height.length - 1;
-    let left = 0;
-    let result = 0;
-
-    while(rightFlag || leftFlag){
-        result = Math.max(result , Math.min(height[left] , height[right]) * (right - left))
-
-        if(height[left] >= height[right]){
-            leftFlag = ((height[right-1]>height[right]) && (left != right-1)) ? true : false;
-            rightFlag = false;
-        }else{
-            leftFlag = false;
-            rightFlag = ((height[left+1]>height[left]) && (left+1 != right)) ? true : false;
-        }
-
-        if(rightFlag){
-            left++;
-        }
-
-        if(leftFlag){
-            right--;
+    let i = 0, j = height.length -1, max = j*(Math.min(height[0], height[j]));
+    while (i<j) {
+        if (height[i] < height[j]) {
+            i++;
+            if (height[i - 1] < height[i]) {
+                max = Math.max(max, (j - i) * Math.min(height[i], height[j]));
+            }
+        } else {
+                j--;
+            if (height[1+j] < height[j]) {
+                max = Math.max(max, (j - i) * Math.min(height[i], height[j]));
+            }
         }
     }
-
-    return result;
+    return max;
 };
 
 
