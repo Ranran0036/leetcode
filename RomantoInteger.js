@@ -14,10 +14,10 @@ let romanToInt = function(s) {
 
     for(let i = 0; i < s.length; i++){
 
+        res += intRomanMap.get(s[i]);
+
         if(lastAdd < intRomanMap.get(s[i])){
-            res = res - lastAdd * 2 + intRomanMap.get(s[i]);
-        }else{
-            res += intRomanMap.get(s[i]);
+            res = res - lastAdd * 2;
         }
 
         lastAdd = intRomanMap.get(s[i]);
