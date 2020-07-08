@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table border="1px" cellspacing='0'>
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+        </tr>
+    </table>
+    <h1>100</h1>
+</body>
+<script>
+    let oH1 = document.getElementsByTagName('h1')[0];
+
+    let origin = 100;
+
+    let timer = setInterval(() => {
+        origin--;
+        oH1.innerHTML = origin
+    },10)
+</script>
+</html>
