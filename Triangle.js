@@ -16,3 +16,9 @@ let minimumTotal = (triangle) => {
     }
     return dp[0];
 };
+
+/*
+
+
+
+*/
