@@ -2,6 +2,8 @@
  * @param {number} n
  * @return {number}
  */
+
+//正常的解法
 let countNumbersWithUniqueDigits = function(n) {
     if(n === 0){
         return 1;
@@ -36,6 +38,41 @@ const calculateFactorial = (n) => {
 
     return res;
 }
+
+//偷懒的写法
+/* const countNumbersWithUniqueDigits = (n) => {
+    switch (n) {
+        case 0:
+            return 1;
+            break;
+        case 1:
+            return 10;
+            break;
+        case 2:
+            return 91;
+            break;
+        case 3:
+            return 739;
+            break;
+        case 4:
+            return 5275;
+            break;
+        case 5:
+            return 32491;
+            break;
+        case 6:
+            return 168571;
+            break;
+        case 7:
+            return 712891;
+            break;
+        case 8:
+            return 2345851;
+            break;
+        default:
+            break;
+    }
+} */
 
 console.log(countNumbersWithUniqueDigits(3));
 
