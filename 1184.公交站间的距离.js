@@ -19,17 +19,14 @@ const distanceBetweenBusStops = function (distance, start, destination) {
     }
 
     let clockwiseDistance = 0;
-
-    for (let i = start; i < destination; i++) {
-        clockwiseDistance += distance[i];
-    }
-
     let antiClockwiseDistance = 0;
+
     for (let i = 0; i < distance.length; i++) {
-        if (i === start) {
-            i = destination;
+        if (i >= start && i < destination) {
+            clockwiseDistance += distance[i];
+        } else {
+            antiClockwiseDistance += distance[i];
         }
-        antiClockwiseDistance += distance[i];
     }
 
     return Math.min(clockwiseDistance, antiClockwiseDistance);
