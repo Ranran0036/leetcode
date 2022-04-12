@@ -12,21 +12,25 @@
  * @return {number}
  */
 const distanceBetweenBusStops = function (distance, start, destination) {
+    if (start === destination) return 0;
     //保证start在destination前面
     if (start > destination) {
         [start, destination] = [destination, start];
     }
 
-    let clockwiseArr = distance.slice(start, destination);
-    let antiClockwiseArr = distance
-        .slice(destination)
-        .concat(distance.slice(0, start));
+    let clockwiseDistance = 0;
 
-    let clockwiseDistance = clockwiseArr.reduce((acc, cur) => acc + cur, 0);
-    let antiClockwiseDistance = antiClockwiseArr.reduce(
-        (acc, cur) => acc + cur,
-        0
-    );
+    for (let i = start; i < destination; i++) {
+        clockwiseDistance += distance[i];
+    }
+
+    let antiClockwiseDistance = 0;
+    for (let i = 0; i < distance.length; i++) {
+        if (i === start) {
+            i = destination;
+        }
+        antiClockwiseDistance += distance[i];
+    }
 
     return Math.min(clockwiseDistance, antiClockwiseDistance);
 };
