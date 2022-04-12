@@ -28,6 +28,5 @@ let maxProfit = (prices) => {
     }
 
     return Math.max(f1, f2);
-}
+};
 // @lc code=end
-
