@@ -24,7 +24,7 @@ const shortestToChar = function (s, c) {
 
     for (let j = len - 1; j > 0; j--) {
         if (j > reverseIndex) {
-            res[j] = Math.max(j - reverseIndex, res[j]);
+            res[j] = Math.min(j - reverseIndex, res[j]);
         } else {
             if (s[j] === c) {
                 dis = 0;
