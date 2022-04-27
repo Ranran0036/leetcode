@@ -37,8 +37,22 @@ const bubbleSort = (arr) => {
     return arr;
 };
 
+//插入排序
+const insertSort = (arr) => {
+    if (!arr || arr.length <= 1) {
+        return arr;
+    }
+
+    for (let end = 1; end < arr.length; end++) {
+        for (let pre = end - 1; pre >= 0 && arr[pre] > arr[pre + 1]; pre--) {
+            [arr[pre], arr[pre + 1]] = [arr[pre + 1], arr[pre]];
+        }
+    }
+
+    return arr;
+};
+
 const arr = [56, 7, 6, 77, 81, 12, 385, 4, 2, 9, 33, 44, 15];
 
-console.log(selectSort(arr));
-console.log(bubbleSort(arr));
+console.log(insertSort(arr));
 console.log(arr);
