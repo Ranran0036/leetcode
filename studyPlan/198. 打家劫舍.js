@@ -6,7 +6,7 @@ const rob = function (nums) {
     if (nums == null || nums.length == 0) {
         return 0;
     }
-    let length = nums.length;
+    /* let length = nums.length;
     if (length == 1) {
         return nums[0];
     }
@@ -17,5 +17,18 @@ const rob = function (nums) {
         second = Math.max(first + nums[i], second);
         first = temp;
     }
-    return second;
+    return second; */
+
+    let dp = new Array(nums.length);
+    dp[0] = nums[0];
+
+    //状态转移方程 dp[i] = Math.max(dp[i-2] + nums[i], dp[i-1])
+    for (let i = 1; i < nums.length; i++) {
+        dp[i] = Math.max(dp[i - 1], dp[i - 2] ? dp[i - 2] + nums[i] : nums[i]);
+    }
+    console.log(dp);
+
+    return dp[nums.length - 1];
 };
+
+console.log(rob([1, 2, 3, 1]));
