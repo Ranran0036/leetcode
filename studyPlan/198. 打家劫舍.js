@@ -24,7 +24,7 @@ const rob = function (nums) {
 
     //状态转移方程 dp[i] = Math.max(dp[i-2] + nums[i], dp[i-1])
     for (let i = 1; i < nums.length; i++) {
-        dp[i] = Math.max(dp[i - 1], dp[i - 2] ? dp[i - 2] + nums[i] : nums[i]);
+        dp[i] = Math.max(dp[i - 1], dp[i - 2] ? dp[i - 2] + nums[i] : nums[i]); //这里的判断是为了防止出现dp[i-2]为undefined的情况
     }
     console.log(dp);
 
