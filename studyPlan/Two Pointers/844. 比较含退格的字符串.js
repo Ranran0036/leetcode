@@ -4,10 +4,7 @@
  * @return {boolean}
  */
 const backspaceCompare = function (s, t) {
-    let s_ = getRealString(s);
-    let t_ = getRealString(t);
-
-    return s_ === t_;
+    return getRealString(s) === getRealString(t);
 };
 
 const getRealString = function (s) {
