@@ -27,8 +27,8 @@ const integerBreak = function (n) {
         return n - 1;
     }
 
-    let quotient = Math.floor(n / 3);
-    let remainder = n % 3;
+    const quotient = Math.floor(n / 3);
+    const remainder = n % 3;
 
     if (remainder === 0) {
         return 3 ** quotient;
