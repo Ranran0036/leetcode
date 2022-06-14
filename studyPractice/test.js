@@ -1,3 +1,4 @@
-const a = [1, 2, 3];
+let a = 1;
 
-a.join = a.shift;
+console.log(a++ === 1);
+console.log(a);
