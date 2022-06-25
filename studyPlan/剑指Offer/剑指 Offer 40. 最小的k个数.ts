@@ -1,5 +1,5 @@
 function getLeastNumbers(arr: number[], k: number): number[] {
-    const priorityQueue = new PriorityQueue();
+    const priorityQueue = new PriorityQueue1();
 
     for (let i = 0; i < k; i++) {
         priorityQueue.enQueue(arr[i]);
@@ -116,7 +116,7 @@ class MaxHep<T extends number> {
     }
 }
 
-class PriorityQueue {
+class PriorityQueue1 {
     private maxHeap: MaxHep<number> = new MaxHep<number>();
 
     public enQueue(item: number): void {
