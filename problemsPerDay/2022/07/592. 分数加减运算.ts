@@ -17,8 +17,8 @@ function calc(a: string, b: string): string {
     const fa = a[0] == "+",
         fb = b[0] == "+";
     if (!fa && fb) return calc(b, a);
-    const p = parse(a),
-        q = parse(b);
+    const p = parse_(a),
+        q = parse_(b);
     const p1 = p[0] * q[1],
         q1 = q[0] * p[1];
     if (fa && fb) {
@@ -41,7 +41,7 @@ function calc(a: string, b: string): string {
     }
 }
 
-function parse(s: string): number[] {
+function parse_(s: string): number[] {
     let n = s.length,
         idx = 1;
     while (idx < n && s[idx] != "/") idx++;
