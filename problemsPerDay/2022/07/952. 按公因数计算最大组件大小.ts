@@ -23,10 +23,10 @@ function largestComponentSize(nums: number[]): number {
     for (let i = 0; i < n; i++) {
         let cur = nums[i];
         for (let j = 2; j * j <= cur; j++) {
-            if (cur % j == 0) add(map, j, i);
+            if (cur % j == 0) add_(map, j, i);
             while (cur % j == 0) cur /= j;
         }
-        if (cur > 1) add(map, cur, i);
+        if (cur > 1) add_(map, cur, i);
     }
     for (let i = 0; i < n; i++) {
         p[i] = i;
@@ -40,7 +40,7 @@ function largestComponentSize(nums: number[]): number {
     return ans;
 }
 
-function add(map: Map<number, Array<number>>, key: number, val: number): void {
+function add_(map: Map<number, Array<number>>, key: number, val: number): void {
     let list = map.get(key);
     if (list == null) list = new Array<number>();
     list.push(val);
