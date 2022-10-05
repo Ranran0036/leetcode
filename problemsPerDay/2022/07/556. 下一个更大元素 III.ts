@@ -11,7 +11,7 @@ function nextGreaterElement(n: number): number {
         j--;
     }
     swap(arr, i, j);
-    reverse(arr, i + 1, arr.length - 1);
+    reverse_(arr, i + 1, arr.length - 1);
     const res = parseInt(arr.join(""));
     return res >= 2 ** 31 ? -1 : res;
 }
@@ -22,7 +22,7 @@ function swap(arr: string[], i: number, j: number) {
     arr[j] = temp;
 }
 
-function reverse(arr: string[], i: number, j: number) {
+function reverse_(arr: string[], i: number, j: number) {
     while (i < j) {
         [arr[i], arr[j]] = [arr[j], arr[i]];
         i++;
