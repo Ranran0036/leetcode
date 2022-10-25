@@ -21,7 +21,7 @@ function shortestBridge(g: number[][]): number {
         p[find(x)] = p[find(y)];
     }
 
-    function update(d: Array<Array<number>>, m1: Map<number, number>, m2: Map<number, number>): number {
+    function update(d: number[][], m1: Map<number, number>, m2: Map<number, number>): number {
         let sz = d.length;
 
         while (sz-- > 0) {
