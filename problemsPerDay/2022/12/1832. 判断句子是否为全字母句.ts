@@ -1,4 +1,4 @@
-function checkIfPangram(sentence: string): boolean {
+function checkIfPangram_(sentence: string): boolean {
     const flag = 67108864;
     let map: number = 0;
 
