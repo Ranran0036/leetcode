@@ -1,11 +1,11 @@
 function numberOfPairs(nums: number[]): number[] {
-    const map: boolean[] = new Array(101).fill(true);
+    const cnt: boolean[] = new Array(101).fill(true);
     let res: number = 0;
 
     for (const num of nums) {
-        map[num] = !map[num];
+        cnt[num] = !cnt[num];
 
-        res += map[num] ? 1 : 0;
+        res += cnt[num] ? 1 : 0;
     }
 
     return [res, nums.length - res * 2];
