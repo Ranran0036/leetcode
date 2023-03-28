@@ -14,4 +14,4 @@ function findSubarrays(nums: number[]): boolean {
     return false;
 }
 
-//test
+//test1
