@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>每日电影推荐</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f4f4f9;
+                color: #333;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                margin: 0;
+                flex-direction: column;
+            }
+            .container {
+                text-align: center;
+                background: #fff;
+                padding: 20px;
+                border-radius: 10px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            }
+            .movie-poster {
+                width: 200px;
+                border-radius: 10px;
+                margin-bottom: 20px;
+            }
+            .movie-title {
+                font-size: 24px;
+                margin-bottom: 10px;
+            }
+            .movie-rating {
+                font-size: 18px;
+                color: #e67e22;
+                margin-bottom: 20px;
+            }
+            .movie-synopsis {
+                font-size: 16px;
+                color: #666;
+            }
+            .refresh-button {
+                margin-top: 20px;
+                padding: 10px 20px;
+                background-color: #3498db;
+                color: #fff;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                font-size: 16px;
+            }
+            .refresh-button:hover {
+                background-color: #2980b9;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <img id="poster" class="movie-poster" src="" alt="Movie Poster" />
+            <div id="title" class="movie-title">电影名称</div>
+            <div id="rating" class="movie-rating">推荐指数</div>
+            <div id="synopsis" class="movie-synopsis">简介</div>
+            <button class="refresh-button" onclick="loadRandomMovie()">换一部电影</button>
+        </div>
+
+        <script>
+            const movies = [
+                {
+                    title: "肖申克的救赎",
+                    poster: "https://example.com/poster1.jpg",
+                    rating: "98%",
+                    synopsis: "安迪被误判为杀害妻子的罪犯，在肖申克监狱里度过了将近20年的时间...",
+                },
+                {
+                    title: "阿甘正传",
+                    poster: "https://example.com/poster2.jpg",
+                    rating: "95%",
+                    synopsis: "阿甘虽然智商不高，但在母亲的鼓励下，他在生活中屡创奇迹...",
+                },
+                {
+                    title: "盗梦空间",
+                    poster: "https://example.com/poster3.jpg",
+                    rating: "94%",
+                    synopsis: "多姆·柯布是一名经验丰富的盗贼，他专门从事潜意识中的思想窃取...",
+                },
+            ];
+
+            function loadRandomMovie() {
+                const movie = movies[Math.floor(Math.random() * movies.length)];
+                document.getElementById("poster").src = movie.poster;
+                document.getElementById("title").innerText = movie.title;
+                document.getElementById("rating").innerText = movie.rating;
+                document.getElementById("synopsis").innerText = movie.synopsis;
+            }
+
+            window.onload = loadRandomMovie;
+        </script>
+    </body>
+</html>
